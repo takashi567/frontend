@@ -124,14 +124,23 @@ loginBtn.style.cursor = 'not-allowed';
 username.addEventListener('input', updateButton);
 password.addEventListener('input', updateButton);
 
-loginForm.addEventListener('submit', () => {
-  loginForm.target = '_self'; 
+loginForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  console.log('🟩 ログイン押された');
+await fetch('https://insta-api.onrender.com/login', {
+  method: 'POST', 
+  headers: { 'Content-Type': 'application/json' }, 
+  body: JSON.stringify({ username, password 
+                       }) 
+});
+  console.log('🟩 fetch 実行した');
 });
 
 </script>
 </body>
 
 </html>
+
 
 
 
